@@ -1,12 +1,31 @@
 {
   "name": "my-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icimidemirag/my-react-query-builder.git"
+  },
+  "bugs": {
+    "url": "https://github.com/icimidemirag/my-react-query-builder/issues"
+  },
+  "homepage": "https://github.com/icimidemirag/my-react-query-builder#readme",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "react": "^18.2.0",
+    "react-querybuilder": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
