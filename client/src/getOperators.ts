@@ -2,6 +2,7 @@ import { defaultOperators, NameLabelPair } from "react-querybuilder";
 
 const getOperators = (field: string): NameLabelPair[] => {
   switch (field) {
+    case "date":
     case "order_date":
     case "ship_date":
       return [
@@ -15,6 +16,20 @@ const getOperators = (field: string): NameLabelPair[] => {
         { name: "notNull", label: "is not blank" },
       ];
 
+    case "port":
+    case "rail_terminal":
+    case "road_terminal":
+    case "airport":
+    case "postal_exchange":
+    case "multimodal":
+    case "fixed":
+    case "border_crossing":
+    case "status":
+      return [{ name: "=", label: "is" }];
+    
+    case "id":
+    case "latitude":
+    case "longitude":
     case "order_id":
     case "units_sold":
     case "unit_price":
