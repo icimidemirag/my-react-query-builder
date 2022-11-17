@@ -22,7 +22,7 @@ import ValueEditor from "./ValueEditor";
 import { parseISO, addDays } from "date-fns";
 import getOperatorsForUpdate from "./getOperatorsForUpdate";
 import ValueEditorForBulkEdit from "./ValueEditorForBulkEdit";
-// import valueProcessor from './valueProcessor';
+import valueProcessor from './valueProcessor';
 
 const processChartData = (chartData: any[]) =>
   chartData.map((cd) => ({ ...cd, order_month: parseISO(cd.order_month) }));
@@ -191,8 +191,8 @@ function App() {
         }}
       />
       <button type="button" onClick={onClickUpdate}>Update</button>
-      {/* <pre>{formatQuery(query, {format:'sql', valueProcessor})}</pre>
-      <pre>{formatQuery(query, 'json')}</pre> */}
+      <pre>{formatQuery(query, {format:'sql', valueProcessor})}</pre>
+      <pre>{formatQuery(query, 'json')}</pre>
       <div className="ag-theme-alpine" style={{ height: 400, width: "100%" }}>
         <AgGridReact
           columnDefs={[
